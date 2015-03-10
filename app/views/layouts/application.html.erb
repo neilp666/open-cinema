@@ -8,11 +8,17 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
+
 <div class= "container">
+	<% flash.each do |type, message| %>
+	<div class="alert alert-info fade-in">
+	<button class="close" data-dismiss="alert">x</button>
+	<%= message %>
+	<% end %>
+
 <%= yield %>
 </div>
+
 
 </body>
 </html>
